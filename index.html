@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Birthday Times</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgm" src="music/song.mp3" loop preload="auto"></audio>
+  <div id="musicBox" class="music-box hidden">
+    <button id="musicBtn" class="music-btn" aria-label="Pengaturan musik">♪</button>
+    <div class="music-panel">
+      <span class="kicker">Musik</span>
+      <div class="vol-row">
+        <input id="volSlider" type="range" min="0" max="100" step="1" aria-label="Volume">
+        <span id="volLabel">50%</span>
+      </div>
+      <button id="playBtn" class="btn-sm">Jeda</button>
+    </div>
+  </div>
+  <div class="rotate-hint" aria-hidden="true">
+    <div class="rotate-phone"></div>
+    <p>Putar HP ke posisi landscape<br>supaya bukunya terbuka lebar.</p>
+  </div>
+  <div id="garland" class="garland" aria-hidden="true"></div>
+
+  <!-- 1. PILIH PASSWORD -->
+  <section id="lock" class="screen active">
+    <article class="news-sheet">
+      <header class="masthead">
+        <div class="mast-top">
+          <span>Vol. <b class="js-age"></b></span>
+          <span>Edisi Terbatas</span>
+          <span>Harga: Satu Pelukan</span>
+        </div>
+        <h1 class="mast-title">The Birthday Times</h1>
+        <div class="rule-double"></div>
+      </header>
+      <p class="kicker">Teka-teki Hari Ini</p>
+      <h2 class="lock-headline">Tanggal Berapa Sayang Lahir?</h2>
+      <p class="lock-deck">Pilih satu tanggal yang benar untuk membuka edisi spesial ini.</p>
+      <div class="options" id="options"></div>
+      <p class="lock-msg" id="lockMsg">&nbsp;</p>
+    </article>
+  </section>
+
+  <!-- 2. AMPLOP -->
+  <section id="envelopeScreen" class="screen">
+    <div class="env-wrap">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-letter">
+          <span class="env-letter-kicker">Kiriman Khusus</span>
+          <span class="env-letter-title" id="envTitle">Untuk sayang</span>
+          <span class="env-letter-rule"></span>
+        </div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="env-twine"></div>
+        <div class="env-seal" id="envSeal">R</div>
+      </div>
+      <p class="env-hint">ketuk amplop untuk membuka</p>
+    </div>
+  </section>
+
+  <!-- 3. BUKU -->
+  <section id="bookScreen" class="screen">
+    <div class="book-wrap">
+      <div id="book"></div>
+    </div>
+    <div class="book-nav">
+      <button id="prevBtn" aria-label="Sebelumnya">‹</button>
+      <span id="pageInfo">1 / 1</span>
+      <button id="nextBtn" aria-label="Berikutnya">›</button>
+    </div>
+    <p class="book-hint">tarik sudut halaman untuk membalik · stiker bisa digeser</p>
+  </section>
+
+  <div id="confetti" class="confetti"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
